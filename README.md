@@ -7,4 +7,4 @@ Automatically updates your Cloudflare DNS records.
 - Your Cloudflare API Token (currently a token is requierd)
 - Your Zone ID
 ## How to setup and everything else you need to know
-Visit this link to get all the information you need.
+Visit [this link](https://www.pinoleekz.de/cloudflare-dns-updater.html "this link") to get all the information you need.
