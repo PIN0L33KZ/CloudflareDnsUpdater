@@ -65,8 +65,8 @@ namespace CloudflareDNS.Properties {
         ///│   Command   │                                  Description                                  │
         ///├─────────────┼───────────────────────────────────────────────────────────────────────────────┤
         ///│ setup       │ Setup your Clodflare API Token and Zone ID.                                   │
-        ///│ get records │ Prints all Records, Type and ID from the selected zone.                       │
-        ///│ get ip      │ Prints your [rest of string was truncated]&quot;;.
+        ///│ update      │ Performs a update to your selected record with your public ip address.        │
+        ///│ reset       │ Resets the  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string HelpMenu {
             get {

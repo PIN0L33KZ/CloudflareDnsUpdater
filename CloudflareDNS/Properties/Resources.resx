@@ -122,6 +122,8 @@
 │   Command   │                                  Description                                  │
 ├─────────────┼───────────────────────────────────────────────────────────────────────────────┤
 │ setup       │ Setup your Clodflare API Token and Zone ID.                                   │
+│ update      │ Performs a update to your selected record with your public ip address.        │
+│ reset       │ Resets the application.                                                       │
 │ get records │ Prints all Records, Type and ID from the selected zone.                       │
 │ get ip      │ Prints your public ip address according to your protocol version (IPv4/IPv6). │
 │ help        │ Prints this help menu.                                                        │
