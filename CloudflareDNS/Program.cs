@@ -226,7 +226,18 @@ namespace CloudflareDNS
             }
             else if(response.IsSuccessStatusCode == false)
             {
+                var record = await cfApi.GetDnsRecordAsync(Properties.Settings.Default.ZoneID, Properties.Settings.Default.DefaultRecordID);
+
+                // Initiate console table to print
+                ConsoleTables.ConsoleTableOptions tableOptions = new ConsoleTables.ConsoleTableOptions() { EnableCount = false, NumberAlignment = ConsoleTables.Alignment.Right, Columns = new string[] { "Name", "Type" } };
+                ConsoleTables.ConsoleTable table = new ConsoleTables.ConsoleTable(tableOptions);
+                table.AddRow(record.Name, record.Type);
+
                 PrintError("Unable to update default record. Reason: " + response.StatusCode + ".");
+                PrintInformation("Make sure you've selected the correct record or verify the integrety of your record.\n");
+                table.Write(ConsoleTables.Format.Minimal);
+                PrintInformation($"IP that's automatically send to cloudflare: {GetPublicIPAsync().Result}");
+                PrintInformation("Choose an A record type to use IPv4 and AAA to use IPv6.");
             }
         }
 

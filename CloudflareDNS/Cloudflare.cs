@@ -69,6 +69,16 @@ namespace CloudflareDNS
             return result?.Result ?? new List<CloudflareRecord>();
         }
 
+        public async Task<CloudflareRecord> GetDnsRecordAsync(string zoneId, string recordId)
+        {
+            string url = $"zones/{zoneId}/dns_records/{recordId}";
+            string response = await _httpClient.GetStringAsync(url);
+
+            CloudflareApiDNSResponseSingleRecord result = JsonSerializer.Deserialize<CloudflareApiDNSResponseSingleRecord>(response);
+
+            return result.Result ?? new CloudflareRecord();
+        }
+
         public async Task<bool> ValidateTokenAsync()
         {
             try
